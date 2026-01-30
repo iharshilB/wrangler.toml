@@ -1,0 +1,26 @@
+name = "macro-analysis-bot"
+main = "src/index.js"
+compatibility_date = "2026-01-29"
+compatibility_flags = ["nodejs_compat"]
+
+# Cloudflare KV for usage tracking and premium status
+kv_namespaces = [
+  { binding = "USAGE_KV", id = "your-kv-namespace-id-here" }
+]
+
+# Environment variables (secrets set via wrangler secret)
+[vars]
+BOT_NAME = "MacroAnalysisBot"
+FREE_DAILY_LIMIT = 3
+
+# Build configuration
+[build]
+command = ""
+
+# Development environment
+[env.dev]
+name = "macro-analysis-bot-dev"
+
+# Production environment
+[env.production]
+name = "macro-analysis-bot"
